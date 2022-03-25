@@ -22,7 +22,7 @@ export default function App() {
 
       {/* Header */}
       <Header />
-      
+
       {/* Top buttons container */}
       <View style={styles.goBackConn}>
         <TouchableOpacity style={styles.backButton}>
@@ -35,7 +35,7 @@ export default function App() {
 
         {/* View or list */}
         <View style={styles.list}>
-          <FlatList 
+          <FlatList
             data={schedule}
             renderItem={({ item }) => (
 
@@ -45,8 +45,8 @@ export default function App() {
             )}
           />
       </View>
- 
-      
+
+
 
       <StatusBar style="auto" />
     </View>
