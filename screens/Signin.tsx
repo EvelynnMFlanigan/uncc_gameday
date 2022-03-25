@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function App() {
+export default function SignIn({ navigation }: RootTabScreenProps<'SignIn'>) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

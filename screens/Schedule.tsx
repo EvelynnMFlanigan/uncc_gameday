@@ -8,7 +8,7 @@ import Header from '../components/header';
 import GameListItem from '../components/gameListItem';
 
 
-export default function App() {
+export default function Schedule({ navigation }: RootTabScreenProps<'Schedule'>){
 
   const [schedule, setSchedule] = useState([
     {title: "UNCC vs. WakForest", date: "03-26-22", location: 'Home', key: '1'},
@@ -25,7 +25,8 @@ export default function App() {
 
       {/* Top buttons container */}
       <View style={styles.goBackConn}>
-        <TouchableOpacity style={styles.backButton}>
+        <TouchableOpacity style={styles.backButton}
+            onPress={() => navigation.navigate("Home")}>
           <Text style={{color: 'white'}}>Go Back</Text>
         </TouchableOpacity>
         <View>

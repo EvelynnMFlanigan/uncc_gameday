@@ -10,7 +10,7 @@ export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
   <ScrollView>
    <View  style={styles.buttonContainer}>
        <TouchableOpacity
-                  onPress={() => navigation.navigate("Home")}>
+                  onPress={() => navigation.navigate("Schedule")}>
                   <Image
                         style={styles.sportsButton}
                         source={require('../assets/images/FB_Sport_Button.png')}
@@ -67,7 +67,7 @@ export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
                    <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
                    </TouchableOpacity>
                    <TouchableOpacity
-                         onPress={() => navigation.navigate("Home")}>
+                         onPress={() => navigation.navigate("SignIn")}>
                            <Image
                              style={styles.sportsButton}
                                source={require('../assets/images/sign-in.jpg')}

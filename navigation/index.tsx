@@ -16,6 +16,7 @@ import ModalScreen from '../screens/ModalScreen';
 import Home from '../screens/Home';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import Schedule from '../screens/Schedule';
+import SignIn from '../screens/Signin'
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
@@ -41,6 +42,8 @@ function RootNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Home}/>
+      <Stack.Screen name="Schedule" component={Schedule}/>
+      <Stack.Screen name="SignIn" component={SignIn}/>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
