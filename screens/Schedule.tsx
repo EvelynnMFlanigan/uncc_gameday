@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { FlatList } from 'react-native';
 
 // Custom components
-import Header from './components/header';
-import GameListItem from './components/gameListItem';
+import Header from '../components/header';
+import GameListItem from '../components/gameListItem';
 
 
 export default function App() {
