@@ -10,61 +10,61 @@ export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
   <ScrollView>
    <View  style={styles.buttonContainer}>
        <TouchableOpacity
-                  onPress={() => navigation.navigate("Schedule")}>
+                  onPress={() => navigation.navigate('Schedule', {sportName: 'Football', getList: true})}>
                   <Image
                         style={styles.sportsButton}
                         source={require('../assets/images/FB_Sport_Button.png')}
                         />
-                  <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
+                  <Text style={{ fontSize: 20, color: '#fff' }}>Football</Text>
            </TouchableOpacity>
 
             <TouchableOpacity
-              onPress={() => navigation.navigate("Home")}>
+              onPress={() => navigation.navigate("Schedule", {sportName: 'Baseball', getList: true})}>
                 <Image
                    style={styles.sportsButton}
                    source={require('../assets/images/BSB_Sport_Button.png')}
                     />
-                    <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
+                    <Text style={{ fontSize: 20, color: '#fff' }}>Baseball</Text>
                       </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => navigation.navigate("Home")}>
+              onPress={() => navigation.navigate("Schedule", {sportName: 'Mens Basketball', getList: true})}>
                <Image
                style={styles.sportsButton}
                source={require('../assets/images/MBB_Sport_Button.png')}
                 />
-                <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
+                <Text style={{ fontSize: 20, color: '#fff' }}>Mens Basketball</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                      onPress={() => navigation.navigate("Home")}>
+                      onPress={() => navigation.navigate("Schedule", {sportName: 'Womens Basketball', getList: true})}>
                       <Image
                          style={styles.sportsButton}
                          source={require('../assets/images/WBB_Sport_Button.png')}
                          />
-                          <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
+                          <Text style={{ fontSize: 20, color: '#fff' }}>Womens Basketball  </Text>
                           </TouchableOpacity>
              <TouchableOpacity
-                onPress={() => navigation.navigate("Home")}>
+                onPress={() => navigation.navigate("Schedule", {sportName: 'Mens Soccer', getList: true})}>
                        <Image
                            style={styles.sportsButton}
                            source={require('../assets/images/MSOC_Sport_Button.png')}
                            />
-                           <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
+                           <Text style={{ fontSize: 20, color: '#fff' }}>Mens Soccer</Text>
             </TouchableOpacity>
             <TouchableOpacity
-                 onPress={() => navigation.navigate("Home")}>
+                 onPress={() => navigation.navigate("Schedule", {sportName: 'Womens Soccer', getList: true})}>
                        <Image
                         style={styles.sportsButton}
                         source={require('../assets/images/WSOC_Sport_Button.png')}
                         />
-                        <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
+                        <Text style={{ fontSize: 20, color: '#fff' }}>Women's Soccer    </Text>
             </TouchableOpacity>
             <TouchableOpacity
-                   onPress={() => navigation.navigate("Home")}>
+                   onPress={() => navigation.navigate("Schedule", {sportName: 'Womens Volleyball', getList: true})}>
                    <Image
                     style={styles.sportsButton}
                     source={require('../assets/images/VB_Sport_Button.png')}
                     />
-                   <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
+                   <Text style={{ fontSize: 20, color: '#fff' }}>Women's Volleyball</Text>
                    </TouchableOpacity>
                    <TouchableOpacity
                          onPress={() => navigation.navigate("SignIn")}>
@@ -72,7 +72,7 @@ export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
                              style={styles.sportsButton}
                                source={require('../assets/images/sign-in.jpg')}
                                 />
-                                 <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
+                                 <Text style={{ fontSize: 20, color: '#fff' }}>Login</Text>
                                   </TouchableOpacity>
         </View>
         </ScrollView>
