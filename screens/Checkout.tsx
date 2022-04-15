@@ -1,110 +1,100 @@
-import { Image, StyleSheet , TouchableOpacity, ScrollView  } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { StatusBar } from "expo-status-bar";
+import React, { useState,Component } from "react";
+import { StyleSheet, Text, View, Image, TextInput, Button, TouchableOpacity,} from "react-native";
+import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 
-export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
-  return (
-  <ScrollView>
-   <View  style={styles.buttonContainer}>
-       <TouchableOpacity
-                  onPress={() => navigation.navigate("Schedule")}>
-                  <Image
-                        style={styles.sportsButton}
-                        source={require('../assets/images/FB_Sport_Button.png')}
-                        />
-                  <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
-           </TouchableOpacity>
+          /*export default function Checkout({navigation}: RootTabScreenProps<'Checkout'>) */
+         export default class Checkout extends Component{
+              constructor(props){
+              super(props);
 
-            <TouchableOpacity
-              onPress={() => navigation.navigate("Home")}>
-                <Image
-                   style={styles.sportsButton}
-                   source={require('../assets/images/BSB_Sport_Button.png')}
-                    />
-                    <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
-                      </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("Home")}>
-               <Image
-               style={styles.sportsButton}
-               source={require('../assets/images/MBB_Sport_Button.png')}
-                />
-                <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                      onPress={() => navigation.navigate("Home")}>
-                      <Image
-                         style={styles.sportsButton}
-                         source={require('../assets/images/WBB_Sport_Button.png')}
-                         />
-                          <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
-                          </TouchableOpacity>
-             <TouchableOpacity
-                onPress={() => navigation.navigate("Home")}>
-                       <Image
-                           style={styles.sportsButton}
-                           source={require('../assets/images/MSOC_Sport_Button.png')}
-                           />
-                           <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                 onPress={() => navigation.navigate("Home")}>
-                       <Image
-                        style={styles.sportsButton}
-                        source={require('../assets/images/WSOC_Sport_Button.png')}
-                        />
-                        <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                   onPress={() => navigation.navigate("Home")}>
-                   <Image
-                    style={styles.sportsButton}
-                    source={require('../assets/images/VB_Sport_Button.png')}
-                    />
-                   <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
-                   </TouchableOpacity>
-                   <TouchableOpacity
-                         onPress={() => navigation.navigate("Checkout")}>
-                           <Image
-                             style={styles.sportsButton}
-                               source={require('../assets/images/sign-in.jpg')}
-                                />
-                                 <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
-                                  </TouchableOpacity>
-        </View>
-        </ScrollView>
-  );
-}
+              this.state = {
+              tableHead: ['Checkout'],
+              widthArr:[390],//390 is about max size
+              spacer:[''],
+              tableTitle: ['General Public', 'Youth Ticket'],
+              tableData: [
+                      ['Number of Tickets','', 'Cost',''],
+                      [' '],
+                      ['Number of Youth Tickets',' ', 'Cost', ' '],
+                      [''],
+                      ['','','Subtotal:',' '],
+                      ['','','Tax:',' '],
+                      ['','','Total:',' '],
+                      ['']
+                      ]
+                  }
+              }
+              // borderStyle={{borderWidth: 2, borderColor: "#c8e1ff", borderTop: "black"}}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  sportsButton:{
-  width: 115,
-  height: 115,
-  borderRadius: 4,
-  padding: 5,
-  margin: 5,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 10,
-    height: 1,
-    width: '80%',
-  },
-    buttonContainer:{
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexWrap: 'wrap'
-    },
-});
+              render(){
+                  const state = this.state;
+                  return(
+                      <View style ={styles.container}>
+                      <Table borderStyle={{borderWidth: 1, borderColor: "#c8e1ff"}} >
+
+                          <Row  data={state.tableHead} style={styles.head} widthArr={state.widthArr} textStyle={styles.headerText}/>
+                          <Row data={state.spacer} style={styles.spacer} borderStyle={{borderWidth:2, borderColor: "black"}} />
+
+                          <Rows  data={state.tableData} textStyle={styles.text}/>
+                          <Row data={state.spacer} style={styles.spacer}  borderStyle={{borderWidth: 2, borderColor: "black"}} />
+                      </Table>
+
+                      <TouchableOpacity style={styles.checkoutBtn}>
+                              <Text style={styles.checkoutText}>Checkout</Text>
+                            </TouchableOpacity>
+                      </View>
+                  )
+                 }
+               }
+
+
+
+
+
+ //Styling
+ const styles = StyleSheet.create({
+
+ container:{
+ flex:1,
+ backgroundColor: "#FFFFFF",//"#00573F",
+ alignItems: "center",
+ justifyContent:"center",
+ },
+
+ //for the table
+ head:{
+ height:90,
+ },
+
+ text: {
+ fontSize: 15
+ },
+
+ headerText:{
+ textAlign:"center",
+ fontWeight:"bold",
+ fontSize: 40
+ },
+
+ checkoutBtn: {
+     width: "80%",
+     borderRadius: 25,
+     height: 50,
+     alignItems: "center",
+     justifyContent: "center",
+     marginTop: 40,
+     backgroundColor: "#b3a369",
+ },
+ checkoutText: {
+       fontWeight:"bold",
+       fontSize:20,
+ },
+
+ spacer:{
+ borderBottomColor: "#000000",
+ },
+
+
+ });
