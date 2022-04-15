@@ -1,13 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableWithoutFeedbackBase, View } from 'react-native';
 
-export default function Header() {
+export default function Header({title}) {
     return (
         <View style={styles.header}>
-            <Text style={styles.title}>Schedule</Text>
+            <Text style={styles.title}>{title}</Text>
         </View>
     )
 };
+
 
 
 const styles = StyleSheet.create({
