@@ -11,7 +11,7 @@ import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-ta
 
               this.state = {
               tableHead: ['Checkout'],
-              widthArr:[390],//390 is about max size
+              //widthArr:[390],//390 is about max size
               spacer:[''],
               tableTitle: ['General Public', 'Youth Ticket'],
               tableData: [
@@ -32,7 +32,7 @@ import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-ta
                   const state = this.state;
                   return(
                       <View style ={styles.container}>
-                      <Table borderStyle={{borderWidth: 1, borderColor: "#c8e1ff"}} >
+                      <Table style ={styles.table} borderStyle={{borderWidth: 1, borderColor: "#c8e1ff"}} >
 
                           <Row  data={state.tableHead} style={styles.head} widthArr={state.widthArr} textStyle={styles.headerText}/>
                           <Row data={state.spacer} style={styles.spacer} borderStyle={{borderWidth:2, borderColor: "black"}} />
@@ -94,6 +94,10 @@ import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-ta
 
  spacer:{
  borderBottomColor: "#000000",
+ },
+
+ table:{
+ width: "100%",
  },
 
 

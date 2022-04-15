@@ -67,7 +67,7 @@ export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
                    <Text style={{ fontSize: 20, color: '#fff' }}>Pick a photo</Text>
                    </TouchableOpacity>
                    <TouchableOpacity
-                         onPress={() => navigation.navigate("SignIn")}>
+                         onPress={() => navigation.navigate("Checkout")}>
                            <Image
                              style={styles.sportsButton}
                                source={require('../assets/images/sign-in.jpg')}
