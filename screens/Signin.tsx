@@ -10,65 +10,102 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function SignIn({ navigation }: RootTabScreenProps<'SignIn'>) {
+export default function SignIn({route , navigation}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+
+
   return (
+    <View style={styles.containerMain}>
+    
     <View style={styles.container}>
-    <Text style={styles.title}>UNCC Gameday</Text>
-      <StatusBar style="auto" />
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
+
+    </View > 
+      <Text style={styles.title}>UNCC Game Day</Text>
+
+      {/* Login input */}
+      <View style={styles.loginView}>
+
+        <Image style={{height: 40, width: 40}} source={require('../assets/images/email_icon.png')}/>
+        <TextInput style={styles.inputView}
           placeholder="Email"
-          placeholderTextColor="#FFFFFF"
-          onChangeText={(email) => setEmail(email)}
+          placeholderTextColor="white"
+          onChangeText={(val) => setEmail(val)}
         />
-      </View>
 
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
+
+
+      </View>
+      {/* Password input */}
+      <View style={styles.loginView}>
+
+        <Image style={{height: 50, width: 40}} source={require('../assets/images/pass_icon.png')}/>
+        <TextInput style={styles.inputView}
           placeholder="Password"
-          placeholderTextColor="#FFFFFF"
-          secureTextEntry={true}
-          onChangeText={(password) => setPassword(password)}
+          placeholderTextColor="white"
+          onChangeText={(val) => setPassword(val)}
         />
+
       </View>
 
-      <TouchableOpacity>
-        <Text style={styles.forgot_button}>Forgot Password?</Text>
+      <TouchableOpacity
+        onPress={() => {
+          let  newUser = {email: email};
+          navigation.navigate('SignUp');
+        }}
+      >
+        <Text style={{fontSize: 20, color: 'blue'}}>Sign Up</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText}>LOGIN</Text>
+      <TouchableOpacity
+        style={styles.loginBtn}
+        onPress={() => {
+          let  newUser = {email: email};
+          navigation.navigate('Home');
+        }}
+      >
+
+        <Text>Login</Text>
+
       </TouchableOpacity>
+
+
+
+
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  containerMain: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: "center"
   },
+  container: {
+    position: "relative",
+    alignItems: "center"
+  }
+  ,
 
   title: {
       fontSize: 30,
       fontWeight: 'bold',
       marginBottom: 20,
+      paddingTop: 50
   },
-
+  loginView: {
+    flexWrap: "wrap",
+    flexDirection: "row"
+  },
   inputView: {
-    backgroundColor: "#046a38",
-    borderRadius: 30,
-    width: "70%",
-    height: 45,
-    marginBottom: 20,
-    alignItems: "center",
+    backgroundColor: "#c9c9c9",
+    borderRadius: 13,
+    height: 40,
+    width: 250,
+    margin: 12,
+    padding: 10,
   },
 
   TextInput: {
@@ -92,4 +129,8 @@ const styles = StyleSheet.create({
     marginTop: 40,
     backgroundColor: "#b3a369",
   },
+  icon: {
+    width: 50,
+    height: 60
+  }
 });
