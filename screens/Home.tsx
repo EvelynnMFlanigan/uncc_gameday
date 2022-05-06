@@ -56,7 +56,7 @@ export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
                         style={styles.sportsButton}
                         source={require('../assets/images/WSOC_Sport_Button.png')}
                         />
-                        <Text style={{ fontSize: 20, color: '#fff' }}>Women's Soccer    </Text>
+                        <Text style={{ fontSize: 20, color: '#fff' }}>Women's Soccer</Text>
             </TouchableOpacity>
             <TouchableOpacity
                    onPress={() => navigation.navigate("Schedule", {sportName: 'Womens Volleyball', getList: true})}>
@@ -67,7 +67,7 @@ export default function Home({ navigation }: RootTabScreenProps<'Home'>) {
                    <Text style={{ fontSize: 20, color: '#fff' }}>Women's Volleyball</Text>
                    </TouchableOpacity>
                    <TouchableOpacity
-                         onPress={() => navigation.navigate("SignIn")}>
+                         onPress={() => navigation.navigate("Seats")}>
                            <Image
                              style={styles.sportsButton}
                                source={require('../assets/images/sign-in.jpg')}

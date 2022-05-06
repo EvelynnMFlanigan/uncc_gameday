@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity, ActivityIndicator, Alert } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import { FlatList } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 // Custom components
 import Header from '../components/header';
@@ -151,13 +152,9 @@ export default function Schedule({route, navigation}){
           <FlatList
                 data={schedule}
                 renderItem={({ item }) => (
-      
-                  <GameListItem item={item} />
-      
-      
+                  <GameListItem item={item} navigation={navigation} />
                 )}
               />
-          
         </View>
       )
     } else {

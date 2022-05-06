@@ -3,16 +3,18 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 
-export default function GameListItem({ item }) {
+export default function GameListItem({ item , navigation}) {
+
     return (
         <View>
-            <TouchableOpacity style={styles.item} onPress={() => console.log(item)} >
+            <TouchableOpacity style={styles.item} onPress={() => navigation.navigate('Seats',
+            {location: item.location,})} >
                 <View style={styles.container}>
 
                     <Text style={styles.title}>{item.oppName}</Text>
                     <Text style={styles.date}>{item.date}</Text>
                     <Text> {item.location}</Text>
-                    
+
                 </View>
             </TouchableOpacity>
 
