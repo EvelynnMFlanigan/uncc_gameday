@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Colors from '../constants/Colors';
 
 
 export default function GameListItem({ item }) {
@@ -11,7 +12,7 @@ export default function GameListItem({ item }) {
 
                     <Text style={styles.title}>{item.oppName}</Text>
                     <Text style={styles.date}>{item.date}</Text>
-                    <Text> {item.location}</Text>
+                    <Text style={styles.location}> {item.location}</Text>
                     
                 </View>
             </TouchableOpacity>
@@ -33,12 +34,17 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         width: '100%',
         height: 100,
-        backgroundColor: 'rgba(86, 189, 110, 0.87)'
+        backgroundColor: '#00573F'
     },
     title: {
-        fontSize: 20
+        fontSize: 20,
+        color: 'white'
     },
     date: {
-        paddingTop: 5
+        paddingTop: 5,
+        color: 'white'
+    },
+    location: {
+        color: 'white'
     }
 });
