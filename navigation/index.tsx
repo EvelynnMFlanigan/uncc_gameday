@@ -22,7 +22,9 @@ import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 import SignUp from '../screens/SignUp';
+import Checkout from '../screens/Checkout';
 
+  
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
     <NavigationContainer
@@ -45,7 +47,10 @@ function RootNavigator() {
       <Stack.Screen name="Home" component={Home}/>
       <Stack.Screen name="Schedule" component={Schedule}/>
       <Stack.Screen name="SignIn" component={SignIn}/>
+
       <Stack.Screen name="SignUp" component={SignUp}/>
+
+      <Stack.Screen name="Checkout" component={Checkout}/>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
